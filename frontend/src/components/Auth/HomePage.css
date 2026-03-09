@@ -1,0 +1,239 @@
+/* Modern Trending Animations */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+  }
+}
+
+/* Home page container with premium gradient */
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-135deg, #0f172a 0%, #1a1f3a 25%, #162e4a 50%, #1a1f3a 75%, #0f172a 100%);
+  background-size: 400% 400%;
+  animation: gradientFlow 20s ease infinite;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Background decorative blur elements - modern glassmorphism effect */
+.home-page::before,
+.home-page::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  opacity: 0.12;
+  filter: blur(60px);
+}
+
+.home-page::before {
+  background: linear-gradient(135deg, #00d4ff, #a78bfa);
+  top: -250px;
+  left: -250px;
+  animation: float 15s ease-in-out infinite;
+}
+
+.home-page::after {
+  background: linear-gradient(135deg, #ff006e, #00d4ff);
+  bottom: -250px;
+  right: -250px;
+  animation: float 18s ease-in-out infinite 2s;
+}
+
+/* Hero section with modern styling */
+.hero {
+  text-align: center;
+  color: var(--text-primary);
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00ffff 0%, #a78bfa 50%, #ff006e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+/* Buttons container */
+.buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+.buttons a,
+.buttons button {
+  padding: 1.2rem 3rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.buttons a {
+  background: linear-gradient(135deg, #00d4ff, #4df9ff);
+  color: #0a0e27;
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+}
+
+.buttons a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
+}
+
+.buttons button {
+  background: rgba(255, 0, 110, 0.15);
+  color: var(--secondary-light);
+  border: 2px solid var(--secondary-light);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(255, 0, 110, 0.2);
+}
+
+.buttons button:hover {
+  background: rgba(255, 0, 110, 0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(255, 0, 110, 0.4);
+}
+
+/* Container for alternative layout */
+.container {
+  text-align: center;
+  color: var(--text-primary);
+  position: relative;
+  z-index: 10;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.container h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00ffff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.container p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.85;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .buttons a,
+  .buttons button {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .buttons a,
+  .buttons button {
+    padding: 0.9rem 2rem;
+    font-size: 0.95rem;
+  }
+}
